@@ -1,5 +1,5 @@
 <form action="./edit_profile.php?action=profile" method="post" class="ui form" enctype="multipart/form-data">
-	<h3 class="ui header">Edytuj profil</h3>
+	<h2 class="ui centered header">Edytuj profil</h2>
 	
 	<div class="field"><label for="email">Email:</label><input type="email" name="email" id="email" value="{$email}" /></div>
 	

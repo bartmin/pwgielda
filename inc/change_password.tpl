@@ -1,5 +1,5 @@
 <form action="./edit_profile.php?action=password" method="post" class="ui form">
-	<h3 class="ui header">Zmień hasło</h3>
+	<h2 class="ui centered header">Zmień hasło</h2>
 
 	<div class="field">
 		<label for="password">Aktualne hasło:</label>

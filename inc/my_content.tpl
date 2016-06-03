@@ -1,3 +1,5 @@
+<h2 class="ui centered header">Moja zawartość</h2>
+
 <div class="ui secondary  menu">
 	<div class="right menu">
 		<a href="./my_content.php?action=add">
@@ -5,6 +7,7 @@
 		</a>
 	</div>
 </div>
+
 {foreach from=$entries item=$entry}
 <div class="ui segment">
 	<div class="ui grid">

@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-06-01 13:01:39
+/* Smarty version 3.1.29, created on 2016-06-03 22:39:02
   from "C:\xampp\htdocs\pwgielda\inc\my_content.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574ec093011c62_93079103',
+  'unifunc' => 'content_5751eae608ae76_58576589',
   'file_dependency' => 
   array (
     '06c9c146873bba91da4f795530afe34694828e0f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\pwgielda\\inc\\my_content.tpl',
-      1 => 1464778896,
+      1 => 1464986341,
       2 => 'file',
     ),
   ),
@@ -19,8 +19,10 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574ec093011c62_93079103 ($_smarty_tpl) {
+function content_5751eae608ae76_58576589 ($_smarty_tpl) {
 ?>
+<h2 class="ui centered header">Moja zawartość</h2>
+
 <div class="ui secondary  menu">
 	<div class="right menu">
 		<a href="./my_content.php?action=add">
@@ -28,6 +30,7 @@ function content_574ec093011c62_93079103 ($_smarty_tpl) {
 		</a>
 	</div>
 </div>
+
 <?php
 $_from = $_smarty_tpl->tpl_vars['entries']->value;
 if (!is_array($_from) && !is_object($_from)) {

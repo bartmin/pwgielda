@@ -1,5 +1,5 @@
 <form action="./my_content.php" method="post" class="ui form">
-	<h3 class="ui header">Dodaj ogłoszenie</h3>
+	<h2 class="ui centered header">Dodaj ogłoszenie</h2>
 	
 	<div class="required field">
 		<label for="title">Tytuł:</label>

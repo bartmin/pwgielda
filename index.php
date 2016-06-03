@@ -9,10 +9,15 @@ $smarty = new Smarty();
 $smarty->template_dir = 'inc/';
 
 $entries_db = $db->query("SELECT * FROM `klapouchy` ORDER BY `date` DESC");
-$users_db = $db->query("SELECT `id`,`login` FROM `puchatek`");
+$users_db = $db->query("SELECT `id`,`login`,`avatar` FROM `puchatek`");
 $entries = $entries_db->fetch_all(MYSQLI_ASSOC);
 $users_tmp = $users_db->fetch_all(MYSQLI_ASSOC);
 $users = array();
+
+foreach ($entries as $k=>$v) {
+	$avatar_col = array_search($v['user_id'],array_column($users_tmp,'id'));
+	$entries[$k]['avatar'] = $users_tmp[$avatar_col]['avatar'];
+}
 
 foreach ($users_tmp as $k=>$a) {
 	$users[$a['id']] = $a['login'];
@@ -39,6 +44,7 @@ if (!$user->isLoggedIn())
 	$smarty->display('login.tpl');
 else {
 	$smarty->assign('username',$user->getUsername());
+	$smarty->assign('class','');
 	$smarty->display('user_panel.tpl');
 }
 ?>

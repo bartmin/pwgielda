@@ -92,7 +92,9 @@ if (isset($_POST['add'])) {
 
 
 $entries_db = $db->query("SELECT * FROM `klapouchy` WHERE `user_id` = '".$user->getId()."' ORDER BY `date` DESC");
+$users_db = $db->query("SELECT `id`,`avatar` FROM `puchatek`");
 $entries = $entries_db->fetch_all(MYSQLI_ASSOC);
+$users = $users_db->fetch_all(MYSQLI_ASSOC);
 
 foreach ($entries as $k=>$v) {
 	$entries[$k]['edit_link'] = Router::link('my_content.php','action=edit&id='.$v['id']);

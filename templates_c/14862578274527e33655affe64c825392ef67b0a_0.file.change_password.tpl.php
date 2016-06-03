@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-30 22:50:05
+/* Smarty version 3.1.29, created on 2016-06-03 22:38:54
   from "C:\xampp\htdocs\pwgielda\inc\change_password.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574ca77d0282f4_58967644',
+  'unifunc' => 'content_5751eade29c656_76309936',
   'file_dependency' => 
   array (
     '14862578274527e33655affe64c825392ef67b0a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\pwgielda\\inc\\change_password.tpl',
-      1 => 1464637388,
+      1 => 1464986331,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,10 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574ca77d0282f4_58967644 ($_smarty_tpl) {
+function content_5751eade29c656_76309936 ($_smarty_tpl) {
 ?>
 <form action="./edit_profile.php?action=password" method="post" class="ui form">
-	<h3 class="ui header">Zmień hasło</h3>
+	<h2 class="ui centered header">Zmień hasło</h2>
 
 	<div class="field">
 		<label for="password">Aktualne hasło:</label>
