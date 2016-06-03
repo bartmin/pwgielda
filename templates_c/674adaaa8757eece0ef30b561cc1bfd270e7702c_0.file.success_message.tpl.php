@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-31 20:48:43
+/* Smarty version 3.1.29, created on 2016-06-03 21:39:08
   from "C:\xampp\htdocs\pwgielda\inc\success_message.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574ddc8b8ac081_55113702',
+  'unifunc' => 'content_5751dcdccb2289_41927964',
   'file_dependency' => 
   array (
     '674adaaa8757eece0ef30b561cc1bfd270e7702c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\pwgielda\\inc\\success_message.tpl',
-      1 => 1464720519,
+      1 => 1464982739,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574ddc8b8ac081_55113702 ($_smarty_tpl) {
+function content_5751dcdccb2289_41927964 ($_smarty_tpl) {
 ?>
 <div class="ui success message">
   <i class="close icon"></i>
@@ -50,5 +50,8 @@ $_smarty_tpl->tpl_vars['i'] = $__foreach_i_0_saved_item;
 }
 ?>
   </ul>
+    <?php if (isset($_smarty_tpl->tpl_vars['redirect_hack']->value)) {
+echo $_smarty_tpl->tpl_vars['redirect_hack']->value;
+}?>
 </div><?php }
 }

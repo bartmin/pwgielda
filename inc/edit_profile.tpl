@@ -19,6 +19,7 @@
 			{if $avatar neq ''}<img src="./img/avatars/{$avatar}" alt="awatar" />{else}<p>Avatar nie został ustawiony.</p>{/if}
 		</div>
 	</div>
-	
+
+	<input type="hidden" name="csrf" value="{$csrf}" />
 	<input type="submit" name="edit" value="Zapisz" class="ui button" />
 </form>

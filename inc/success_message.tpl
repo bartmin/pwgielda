@@ -8,4 +8,5 @@
 		<li>{$i}</li>
 	{/foreach}
   </ul>
+    {if isset($redirect_hack)}{$redirect_hack}{/if}
 </div>

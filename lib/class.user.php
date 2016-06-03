@@ -36,6 +36,28 @@ class User {
 			return TRUE;
 	}
 	
+	function checkCsrfToken($request_token) {
+		$token = $this->getCsrfToken();
+		return ($token == $request_token);
+	}
+	
+	function getCsrfToken() {
+		return $_SESSION['csrf'];
+	}
+	
+	function setNewCsrfToken() {
+		global $db;
+		$session_id = $db->real_escape_string($this->getSessionId());
+		
+		$new = sha1(bin2hex(openssl_random_pseudo_bytes(16)));
+		$_SESSION['csrf'] = $new;
+		
+		$new2 = $db->real_escape_string($new);
+		$db->query("UPDATE `krzys` SET `csrf` = '$new2' WHERE `session_id` = '$session_id'");
+		
+		return $new;
+	}
+	
 	function isLoggedIn() {
 		if (isset($_SESSION['user_id'])) {
 			return $this->checkSessionCohesion();

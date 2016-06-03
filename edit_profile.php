@@ -18,6 +18,13 @@ $data = $data->fetch_assoc();
 $changed = FALSE;
 
 if (isset($_POST['change'])) {
+	// anty csrf
+	$csrf = (isset($_POST['csrf'])) ? $_POST['csrf'] : '';
+	if (!$user->checkCsrfToken($csrf))
+		die('Zabezpieczenie anty-CSRF wykryło próbę nieautoryzowanego żądania.');
+	else
+		$user->setNewCsrfToken();
+
 	$password = $_POST['password'];
 	$new_password = $_POST['new_password'];
 	$new_password2 = $_POST['new_password2'];
@@ -45,6 +52,13 @@ if (isset($_POST['change'])) {
 		}
 	}
 } else if (isset($_POST['edit'])) {
+	// anty csrf
+	$csrf = (isset($_POST['csrf'])) ? $_POST['csrf'] : '';
+	if (!$user->checkCsrfToken($csrf))
+		die('Zabezpieczenie anty-CSRF wykryło próbę nieautoryzowanego żądania.');
+	else
+		$user->setNewCsrfToken();
+
 	$errors = array();
 	$success = array();
 	$email = $data['email'];
@@ -159,7 +173,10 @@ if (isset($_GET['action'])) {
 			$smarty->assign('class','change_password');
 			$smarty->display('change_password.tpl');
 			break;
-		case 'profile'	: 
+		case 'profile'	:
+			$csrf = $user->getCsrfToken();
+
+			$smarty->assign('csrf',$csrf);
 			$smarty->assign('class','edit_profile');
 			$smarty->assign('about_me',$data['about_me']);
 			$smarty->assign('avatar',$data['avatar']);

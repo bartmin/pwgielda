@@ -58,7 +58,11 @@ if ($check_login->num_rows === 1) {
 		$db->query("DELETE FROM `krzys` WHERE `ip` = '$ip'");
 		$session_id = $user->getSessionId();
 		$session_id = $db->real_escape_string($session_id);
-		$db->query("INSERT INTO `krzys` VALUES(NULL,'$session_id','$ip')");
+
+		// ustaw nowy token CSRF
+		$csrf = $user->setNewCsrfToken();
+		$csrf = $db->real_escape_string($csrf);
+		$db->query("INSERT INTO `krzys` VALUES(NULL,'$session_id','$ip','$csrf')");
 
 		Router::redirect();
 	} else {

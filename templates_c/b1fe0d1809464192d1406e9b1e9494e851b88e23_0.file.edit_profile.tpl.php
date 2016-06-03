@@ -1,17 +1,17 @@
 <?php
-/* Smarty version 3.1.29, created on 2016-05-31 20:55:04
+/* Smarty version 3.1.29, created on 2016-06-03 21:50:13
   from "C:\xampp\htdocs\pwgielda\inc\edit_profile.tpl" */
 
 if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl, array (
   'has_nocache_code' => false,
   'version' => '3.1.29',
-  'unifunc' => 'content_574dde08df2db3_17204192',
+  'unifunc' => 'content_5751df75af4f59_32696628',
   'file_dependency' => 
   array (
     'b1fe0d1809464192d1406e9b1e9494e851b88e23' => 
     array (
       0 => 'C:\\xampp\\htdocs\\pwgielda\\inc\\edit_profile.tpl',
-      1 => 1464720904,
+      1 => 1464983151,
       2 => 'file',
     ),
   ),
@@ -19,7 +19,7 @@ if ($_smarty_tpl->smarty->ext->_validateCompiled->decodeProperties($_smarty_tpl,
   array (
   ),
 ),false)) {
-function content_574dde08df2db3_17204192 ($_smarty_tpl) {
+function content_5751df75af4f59_32696628 ($_smarty_tpl) {
 ?>
 <form action="./edit_profile.php?action=profile" method="post" class="ui form" enctype="multipart/form-data">
 	<h3 class="ui header">Edytuj profil</h3>
@@ -45,7 +45,9 @@ function content_574dde08df2db3_17204192 ($_smarty_tpl) {
 " alt="awatar" /><?php } else { ?><p>Avatar nie został ustawiony.</p><?php }?>
 		</div>
 	</div>
-	
+
+	<input type="hidden" name="csrf" value="<?php echo $_smarty_tpl->tpl_vars['csrf']->value;?>
+" />
 	<input type="submit" name="edit" value="Zapisz" class="ui button" />
 </form><?php }
 }

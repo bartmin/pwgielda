@@ -10,6 +10,7 @@
 		<label for="content">Treść:</label>
 		<textarea name="content" id="content" required></textarea>
 	</div>
-	
+
+	<input type="hidden" name="csrf" value="{$csrf}" />
 	<input type="submit" name="add" value="Dodaj" class="ui button">
 </form>

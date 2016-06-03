@@ -11,5 +11,10 @@ class Router {
         $arguments = ($arguments == '') ? '' : '?'.$arguments;
         return './'.$filename.$arguments;
     }
+
+    static function js_redirect($filename = '', $arguments = '',$time = 2000) {
+        $code = "<script>setTimeout('location.assign(\"./$filename?$arguments\")',$time);</script>";
+        return $code;
+    }
 }
 ?>
