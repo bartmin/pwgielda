@@ -90,11 +90,20 @@ if ($check_login->num_rows === 1) {
 }
 
 $smarty->display('header.tpl');
+?>
+	<div class="ui grid">
+		<div class="ui four wide centered column">
+<?php
 if (isset($message)) {
 	$smarty->assign('error_description',$message);
 	$smarty->assign('error_title','Błąd podczas logowania');
 	$smarty->display('error_message.tpl');
 }
+
 $smarty->display('login.tpl');
+?>
+	</div>
+</div>
+<?php
 $smarty->display('footer.tpl');
 ?>

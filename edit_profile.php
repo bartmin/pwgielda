@@ -117,7 +117,7 @@ if (isset($_POST['change'])) {
 			if ($email_change_request) {
 				$smarty->assign('activation_code',$code);
 				
-				if (!mail($old_email,'Prośba o zmianę hasła','asd')) {
+				if (!mail($old_email,'Prośba o zmianę hasła',"<a href=\"http://localhost/pwgielda/confirm_email.php?email=$old_email&code=$code\">Zmień hasło</a>")) {
 					$errors[] = 'Nie udało się wysłać wiadomości z prośbą o potwierdzenie zmiany adresu email. Spróbuj jeszcze raz.';
 					
 					$db->query("DELETE FROM `tygrysek` WHERE `id` = '$query_id'");
