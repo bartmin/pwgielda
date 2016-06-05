@@ -79,15 +79,15 @@ if (isset($_POST['change'])) {
 		$size = $avatar['size'];
 		
 		if (in_array($extension,array('png','gif','jpg'))) {
-			//$filetype = mime_content_type($avatar['tmp_name']);
+			$filetype = mime_content_type($avatar['tmp_name']);
 			
-			//if (in_array($filetype,array('image/gif','image/png','image/jpeg'))) {
+			if (in_array($filetype,array('image/gif','image/png','image/jpeg'))) {
 				if ($size > 512000) {
 					$errors[] = 'Maksymalny rozmiar pliku to 500kB.';
 				}
-			//} else {
-			//	$errors[] = 'Dopuszczalne typy plików to PNG, GIF i JPG.';
-			//}
+			} else {
+				$errors[] = 'Dopuszczalne typy plików to PNG, GIF i JPG.';
+			}
 		} else {
 			$errors[] = 'Dopuszczalne typy plików to PNG, GIF i JPG.';
 		}
